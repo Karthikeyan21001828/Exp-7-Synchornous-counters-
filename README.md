@@ -1,7 +1,10 @@
 # Exp-6-Synchornous-counters - up counter and down counter 
-### AIM: To implement 4 bit up and down counters and validate  functionality.
-### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
-### SOFTWARE REQUIRED:   Quartus prime
+### AIM: 
+To implement 4 bit up and down counters and validate  functionality.
+### HARDWARE REQUIRED: 
+PC, Cyclone II , USB flasher
+### SOFTWARE REQUIRED:   
+Quartus prime
 ### THEORY 
 
 ## UP COUNTER 
@@ -46,43 +49,69 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 4-bit Count Down Counter
 ### Procedure
-/* write all the steps invloved */
+1. Create module projectname(input ,output) to start the verilog programming.
+2. create a if loop condition to increase the count in counter_up function.
+3. Similarly, create another loop for the down counter.
+4. End the verilog program using keyword endmodule.
+5. Get the timing diagram and RTL realization diagram for respective Counters.
 
 
 
 ### PROGRAM 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+
+Developed by: Karthikeyan.K
+
+RegisterNumber: 212221230046
 */
+UP COUNTER
+```
+module EX06_UP(clock,reset,up);
+input clock,reset;
+output reg[0:2] up;
+always@(posedge clock or posedge reset)
+begin
+if(reset)
+up=3'b 000;
+else
+up=up+1;
+end
+endmodule
 
-
-
-
-
-
-### RTL LOGIC UP COUNTER AND DOWN COUNTER  
-
-
-
-
-
-
-
-
+```
+DOWN COUNTER
+```
+module EX06_DOWN(clock,reset,down);
+input clock,reset;
+output reg[2:0] down;
+always@(posedge clock or posedge reset)
+begin
+if(reset)
+down=3'b 111;
+else
+down=down-1;
+end
+endmodule
+```
+### OUTPUT:
+### RTL LOGIC UP COUNTER AND DOWN COUNTER
+### UP COUNTER  
+![op](UP_RTL.png)
+### DOWN COUNTER
+![op](DOWN_RTL.png)
 
 ### TIMING DIGRAMS FOR COUNTER  
-
-
-
-
+### UP COUNTER
+![op](UP_Time.png)
+### DOWN COUNTER
+![op](DOWN_Time.png)
 
 ### TRUTH TABLE 
-
-
-
-
-
+### UP COUNTER
+![op](UP_TT.png)
+### DOWN COUNTER
+![op](DOWN_TT.png)
 
 ### RESULTS 
+Thus 4 bit up and down counters is implemented and its functionality is validated.
