@@ -65,6 +65,7 @@ Developed by: Karthikeyan.K
 
 RegisterNumber: 212221230046
 */
+
 UP COUNTER
 ```
 module EX06_UP(clock,reset,up);
